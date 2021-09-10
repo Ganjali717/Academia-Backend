@@ -1,0 +1,371 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="hero-wrap" style="background-image:url(../images/@Model.Heros.First().Image)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center">
+            <div class="col-lg-5">
+                <div class="text mt-5 pt-5" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <span class="subheading">Welcome to Academia</span>
+                    <h1 class="mb-4">@Model.Heros.First().Title </h1>
+                    <p class="mb-4">@Model.Heros.First().Desc</p>
+                    <p><a href="@Model.Heros.First().RedirectUrl" class="btn btn-primary p-4 py-3">Get Started Now! <span class="ion-ios-arrow-round-forward"></span></a> <a href="@Model.Heros.First().RedirectUrlSecond" class="btn btn-white p-4 py-3">View Course <span class="ion-ios-arrow-round-forward"></span></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container-xl">
+        <div class="row g-xl-5">
+            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <div class="img w-100" style="background-image:url(../images/@Model.Benefit.First().Image)">
+                </div>
+            </div>
+            <div class="col-md-6 heading-section d-flex align-items-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <div class="mt-0 my-lg-5 py-5">
+                    <span class="subheading">Learn Anything</span>
+                    <h2 class="mb-2">@Model.Benefit.First().Title</h2>
+                    <div class="row mt-4 g-lg-2">
+
+                        @for (int i = 0; i < Model.BenefitCard.Count; i++)
+                        {
+                            <div class="col-lg-12 d-flex align-items-stretch services-wrap">
+                                <div class="services d-flex">
+                                    <div class="icon">@Html.Raw(Model.BenefitCard[i].Icon)</div>
+                                    <div class="text">
+                                        <h2>@Model.BenefitCard[i].Title</h2>
+                                        <p class="mb-0">@Model.BenefitCard[i].Desc</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section-counter img" style="background-image:url(../images/xbg_3.jpg.pagespeed.ic.z_ltqRZXRc.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row section-counter">
+
+            @for (int i = 0; i < Model.Counters.Count; i++)
+            {
+                <div class="col-sm-6 col-md-6 col-lg-3 d-flex align-items-stretch">
+                    <div class="counter-wrap-2 d-flex" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                        <div class="icon">
+                            @Html.Raw(Model.Counters[i].Icon)   
+                        </div>
+                        <div class="text">
+                            <h2 class="number"><span class="countup">@Model.Counters[i].CountDigit</span></h2>
+                            <span class="caption">@Model.Counters[i].Title</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="ftco-section courses-section ftco-no-pb">
+    <div class="container">
+        <div class="row justify-content-center pb-4">
+            <div class="col-md-10 text-center heading-section" data-aos="fade-up">
+                <span class="subheading">Our Courses</span>
+                <h2 class="mb-5">Explore Our Popular Online Courses</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <div class="carousel-courses">
+
+                    @for (int i = 0; i < Model.Cource.Count; i++)
+                    {
+                        <div class="item">
+                            <div class="courses">
+                                <div class="d-flex">
+                                    <div class="icon">@Html.Raw(Model.Cource[i].Logo)</div>
+                                    <div class="text">
+                                        <h2>@Model.Cource[i].Desc</h2>
+                                        <p class="rate">
+
+                                            @Html.Raw(Model.Cource[i].Stars)
+                                             
+                                            
+                                        </p>
+                                        <div class="author-wrap d-flex align-items-center">
+                                            <div class="img" style="background-image:url(../images/@Model.Cource[i].Img)"></div>
+                                            <span class="author">@Model.Cource[i].Teacher</span>
+                                        </div>
+                                        <p class="lec"><a href="#">@Model.Cource[i].LectureTime</a></p>
+                                    </div>
+                                </div>
+                                <div class="text-center bg-light rounded py-2 my-3">
+                                    <p class="course-price mb-0">@Html.Raw(Model.Cource[i].Price)</p>
+                                </div>
+                                <div class="text-center">
+                                    <a href="@Model.Cource[i].RedirectUrl" class="btn d-block btn-primary btn-outline-primary py-3">Enroll Now!</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container-xl">
+        <div class="row justify-content-center">
+            <div class="col-md-8 heading-section text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <span class="subheading">Courses</span>
+                <h2 class="mb-4">Browse Our Online Courses</h2>
+            </div>
+        </div>
+        <div class="row g-lg-2 justify-content-center">
+
+            @for (int i = 0; i < Model.OnlineCource.Count; i++)
+            {
+                <div class="col-md-3 col-xl-2 text-center d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                    <a href="#" class="services-2">
+                        <div class="icon">@Html.Raw(Model.OnlineCource[i].Logo)</div>
+                        <div class="text">
+                            <h2>@Model.OnlineCource[i].Title</h2>
+                            <span>@Model.OnlineCource[i].Count</span>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="ftco-section testimony-section bg-light">
+    <div class="container-xl">
+        <div class="row justify-content-center pb-4">
+            <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
+                <span class="subheading">Testimonial</span>
+                <h2 class="mb-5">Our Successful Students</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <div class="carousel-testimony">
+                    <div class="item">
+                        <div class="testimony-wrap">
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image:url(../images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    </div>
+                                    <div class="ps-3 tx">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap">
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image:url(../images/xperson_2.jpg.pagespeed.ic.yyrmjBH91b.jpg)">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    </div>
+                                    <div class="ps-3 tx">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap">
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image:url(../images/person_3.jpg)">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    </div>
+                                    <div class="ps-3 tx">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap">
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image:url(../images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    </div>
+                                    <div class="ps-3 tx">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap">
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image:url(../images/xperson_2.jpg.pagespeed.ic.yyrmjBH91b.jpg)">
+                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    </div>
+                                    <div class="ps-3 tx">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section bg-light ftco-no-pt">
+    <div class="container-xl">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center" data-aos="fade-up" data-aos-duration="1000">
+                <span class="subheading">Our Blog</span>
+                <h2>Recent From Blog</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <a href="blog-single.html" class="block-20 img" style="background-image:url(../images/ximage_1.jpg.pagespeed.ic.UgmmPhXrdT.jpg)">
+                    </a>
+                    <div class="text">
+                        <p class="meta"><span><i class="fa fa-user me-1"></i>Admin</span> <span><i class="fa fa-calendar me-1"></i>Jan. 18, 2021</span> <span><a href="#"><i class="fa fa-comment me-1"></i> 3 Comments</a></span></p>
+                        <h3 class="heading mb-3"><a href="#">Build your Dream Software &amp; Engineering Career</a></h3>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <a href="blog-single.html" class="block-20 img" style="background-image:url(../images/ximage_2.jpg.pagespeed.ic.VzEAApnz9L.jpg)">
+                    </a>
+                    <div class="text">
+                        <p class="meta"><span><i class="fa fa-user me-1"></i>Admin</span> <span><i class="fa fa-calendar me-1"></i>Jan. 18, 2021</span> <span><a href="#"><i class="fa fa-comment me-1"></i> 3 Comments</a></span></p>
+                        <h3 class="heading mb-3"><a href="#">Build your Dream Software &amp; Engineering Career</a></h3>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex">
+                <div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <a href="blog-single.html" class="block-20 img" style="background-image:url(../images/ximage_3.jpg.pagespeed.ic.uT3vqkYLiY.jpg)">
+                    </a>
+                    <div class="text">
+                        <p class="meta"><span><i class="fa fa-user me-1"></i>Admin</span> <span><i class="fa fa-calendar me-1"></i>Jan. 18, 2021</span> <span><a href="#"><i class="fa fa-comment me-1"></i> 3 Comments</a></span></p>
+                        <h3 class="heading mb-3"><a href="#">Build your Dream Software &amp; Engineering Career</a></h3>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
+                <span class="subheading">Our Pricing</span>
+                <h2 class="mb-3">Pricing &amp; <span>Packages</span></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <div class="block-7">
+                    <div class="text-center">
+                        <span class="excerpt d-block">Basic Plan</span>
+                        <span class="price"><sup>$</sup> <span class="number">49K</span></span>
+                        <div class="p-4 px-lg-5">
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-outline-primary d-block px-2 py-3">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="block-7">
+                    <div class="text-center">
+                        <span class="excerpt d-block">Beginner Plan</span>
+                        <span class="price"><sup>$</sup> <span class="number">79K</span></span>
+                        <div class="p-4 px-lg-5">
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-outline-primary d-block px-2 py-3">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <div class="block-7">
+                    <div class="text-center">
+                        <span class="excerpt d-block">Premium Plan</span>
+                        <span class="price"><sup>$</sup> <span class="number">109K</span></span>
+                        <div class="p-4 px-lg-5">
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-outline-primary d-block px-2 py-3">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div class="block-7">
+                    <div class="text-center">
+                        <span class="excerpt d-block">Ultimate Plan</span>
+                        <span class="price"><sup>$</sup> <span class="number">149K</span></span>
+                        <div class="p-4 px-lg-5">
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-outline-primary d-block px-2 py-3">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-intro py-5 bg-primary">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10">
+                <div class="row g-lg-5">
+                    <div class="col-md-7 text-lg-right">
+                        <h2 class="mb-0">Newsletter - Stay tune and get the latest update</h2>
+                        <p>Far far away, behind the word mountains</p>
+                    </div>
+                    <div class="col-md-5 border-left d-flex align-items-center">
+                        <form action="#" class="subscribe-form">
+                            <div class="form-group d-flex align-items-center">
+                                <input type="text" class="form-control" placeholder="Enter email address">
+                                <a href="#" class="btn-icon"><span class="fa fa-paper-plane"></span></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

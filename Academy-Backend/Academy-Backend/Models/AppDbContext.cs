@@ -19,5 +19,7 @@ namespace Academy_Backend.Models
         public DbSet<Counter> Counters { get; set; }
         public DbSet<Cources> Cource { get; set; }
         public DbSet<OnlineCources> OnlineCources { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }

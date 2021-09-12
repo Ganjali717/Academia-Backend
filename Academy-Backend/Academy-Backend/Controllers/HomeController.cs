@@ -27,6 +27,8 @@ namespace Academy_Backend.Controllers
             List<Counter> counter = _context.Counters.ToList();
             List<Cources> cources = _context.Cource.ToList();
             List<OnlineCources> onlinecource = _context.OnlineCources.ToList();
+            List<Testimonial> testimonial = _context.Testimonials.ToList();
+            List<Blog> blog = _context.Blogs.ToList();
 
 
             HomeViewModel homeVM = new HomeViewModel
@@ -36,7 +38,9 @@ namespace Academy_Backend.Controllers
                 BenefitCard = benefitcards,
                 Counters = counter,
                 Cource = cources,
-                OnlineCource = onlinecource
+                OnlineCource = onlinecource,
+                Testimonials = testimonial,
+                Blogs = blog
             };
 
             return View(homeVM);

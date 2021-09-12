@@ -14,5 +14,7 @@ namespace Academy_Backend.ViewModels
         public List<Counter> Counters { get; set; }
         public List<Cources> Cource { get; set; }
         public List<OnlineCources> OnlineCource { get; set; }
+        public List<Testimonial> Testimonials { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }

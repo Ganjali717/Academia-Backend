@@ -157,86 +157,26 @@
         <div class="row">
             <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                 <div class="carousel-testimony">
-                    <div class="item">
-                        <div class="testimony-wrap">
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image:url(../images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+
+                    @for (int i = 0; i < Model.Testimonials.Count; i++)
+                    {
+                        <div class="item">
+                            <div class="testimony-wrap">
+                                <div class="text">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="user-img" style="background-image:url(../images/@Model.Testimonials[i].Image)">
+                                            <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                        </div>
+                                        <div class="ps-3 tx">
+                                            <p class="name">@Model.Testimonials[i].Fullname</p>
+                                            <span class="position">@Model.Testimonials[i].Speciality</span>
+                                        </div>
                                     </div>
-                                    <div class="ps-3 tx">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
+                                    <p class="mb-4 msg">@Model.Testimonials[i].Desc</p>
                                 </div>
-                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap">
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image:url(../images/xperson_2.jpg.pagespeed.ic.yyrmjBH91b.jpg)">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                    </div>
-                                    <div class="ps-3 tx">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap">
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image:url(../images/person_3.jpg)">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                    </div>
-                                    <div class="ps-3 tx">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap">
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image:url(../images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg)">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                    </div>
-                                    <div class="ps-3 tx">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap">
-                            <div class="text">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="user-img" style="background-image:url(../images/xperson_2.jpg.pagespeed.ic.yyrmjBH91b.jpg)">
-                                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                    </div>
-                                    <div class="ps-3 tx">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
-                                    </div>
-                                </div>
-                                <p class="mb-4 msg">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
@@ -251,39 +191,20 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-4 d-flex">
-                <div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <a href="blog-single.html" class="block-20 img" style="background-image:url(../images/ximage_1.jpg.pagespeed.ic.UgmmPhXrdT.jpg)">
-                    </a>
-                    <div class="text">
-                        <p class="meta"><span><i class="fa fa-user me-1"></i>Admin</span> <span><i class="fa fa-calendar me-1"></i>Jan. 18, 2021</span> <span><a href="#"><i class="fa fa-comment me-1"></i> 3 Comments</a></span></p>
-                        <h3 class="heading mb-3"><a href="#">Build your Dream Software &amp; Engineering Career</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            @for (int i = 0; i < Model.Blogs.Count; i++)
+            {
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <a href="blog-single.html" class="block-20 img" style="background-image:url(../images/@Model.Blogs[i].Image)">
+                        </a>
+                        <div class="text">
+                            <p class="meta"><span>@Html.Raw(Model.Blogs[i].Icon1)Admin</span> <span>@Html.Raw(Model.Blogs[i].Icon2)Jan. 18, 2021</span> <span><a href="#">@Html.Raw(Model.Blogs[i].Icon3) 3 Comments</a></span></p>
+                            <h3 class="heading mb-3"><a href="#">@Html.Raw(Model.Blogs[i].Item)</a></h3>
+                            <p>@Model.Blogs[i].Desc</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-4 d-flex">
-                <div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <a href="blog-single.html" class="block-20 img" style="background-image:url(../images/ximage_2.jpg.pagespeed.ic.VzEAApnz9L.jpg)">
-                    </a>
-                    <div class="text">
-                        <p class="meta"><span><i class="fa fa-user me-1"></i>Admin</span> <span><i class="fa fa-calendar me-1"></i>Jan. 18, 2021</span> <span><a href="#"><i class="fa fa-comment me-1"></i> 3 Comments</a></span></p>
-                        <h3 class="heading mb-3"><a href="#">Build your Dream Software &amp; Engineering Career</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 d-flex">
-                <div class="blog-entry justify-content-end" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <a href="blog-single.html" class="block-20 img" style="background-image:url(../images/ximage_3.jpg.pagespeed.ic.uT3vqkYLiY.jpg)">
-                    </a>
-                    <div class="text">
-                        <p class="meta"><span><i class="fa fa-user me-1"></i>Admin</span> <span><i class="fa fa-calendar me-1"></i>Jan. 18, 2021</span> <span><a href="#"><i class="fa fa-comment me-1"></i> 3 Comments</a></span></p>
-                        <h3 class="heading mb-3"><a href="#">Build your Dream Software &amp; Engineering Career</a></h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
